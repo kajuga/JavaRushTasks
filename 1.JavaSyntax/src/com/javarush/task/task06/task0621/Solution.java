@@ -1,6 +1,5 @@
 package com.javarush.task.task06.task0621;
 
-import javafx.scene.shape.ClosePathBuilder;
 
 import java.io.BufferedReader;
 import java.io.IOException;
