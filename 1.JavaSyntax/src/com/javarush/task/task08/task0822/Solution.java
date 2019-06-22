@@ -3,9 +3,7 @@ package com.javarush.task.task08.task0822;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /* 
 Минимальное из N чисел
@@ -14,16 +12,25 @@ import java.util.List;
 public class Solution {
     public static void main(String[] args) throws Exception {
         List<Integer> integerList = getIntegerList();
+        for (int i = 0; i < integerList.size(); i++) {
+            System.out.print(integerList.get(i) + " ");
+        }
+        System.out.println();
         System.out.println(getMinimum(integerList));
     }
 
     public static int getMinimum(List<Integer> array) {
+        return Collections.min(array);
         // Найти минимум тут
-        return 0;
     }
 
     public static List<Integer> getIntegerList() throws IOException {
         // Создать и заполнить список тут
-        return null;
+        Random rnd = new Random();
+        List<Integer> result = new ArrayList<>();
+        for (int i = 0; i < 20; i++) {
+            result.add(rnd.nextInt(20));
+        }
+        return result;
     }
 }
