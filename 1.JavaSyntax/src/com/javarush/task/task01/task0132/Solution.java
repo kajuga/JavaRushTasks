@@ -15,7 +15,7 @@ public class Solution {
         int temp = Integer.toString(number).length();
         for (int i = 0; i < temp; i++) {
             char z = (Integer.toString(number).charAt(i));
-            int inner = Character.getNumericValue(z);
+            int inner = Character.getNumericValue(Integer.toString(number).charAt(i));
             result += inner;
         }
         return result;

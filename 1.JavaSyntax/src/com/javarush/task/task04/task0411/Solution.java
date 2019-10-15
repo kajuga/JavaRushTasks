@@ -12,7 +12,7 @@ public class Solution {
         checkSeason(10);
     }
 
-    public static void checkSeason(int month) {
+    public static void checkSeason(Integer month) {
         //напишите тут ваш код
         switch (month) {
             case 1: {
