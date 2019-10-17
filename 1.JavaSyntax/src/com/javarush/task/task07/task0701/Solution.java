@@ -3,6 +3,8 @@ package com.javarush.task.task07.task0701;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
 /* 
 Массивный максимум
@@ -28,15 +30,7 @@ public class Solution {
 
     public static int max(int[] array) {
         // найди максимальное значение
-        int tmp = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (tmp < array[i]) {
-                tmp = array[i];
-            }
+        Arrays.sort(array);
+        return array[array.length - 1];
         }
-
-
-
-        return tmp;
-    }
 }

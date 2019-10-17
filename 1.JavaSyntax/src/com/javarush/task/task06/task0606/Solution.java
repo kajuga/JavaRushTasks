@@ -29,6 +29,8 @@ public class Solution {
             }
 
             for (Integer i : array) {
+                System.out.println(i);
+
                 if (i % 2 == 0) {
                     even++;
                 } else odd++;

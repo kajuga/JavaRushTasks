@@ -17,12 +17,5 @@ public class Solution {
                 max = b;
             }
         }
-
-
-
-
     }
-
-
-    
 }

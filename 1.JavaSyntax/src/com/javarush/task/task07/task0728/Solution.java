@@ -12,8 +12,8 @@ import java.util.Collections;
 public class Solution {
     public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        int[] array = new int[20];
-        for (int i = 0; i < 20; i++) {
+        Integer[] array = new Integer[5];
+        for (int i = 0; i < 5; i++) {
             array[i] = Integer.parseInt(reader.readLine());
         }
 
@@ -24,13 +24,8 @@ public class Solution {
         }
     }
 
-    public static void sort(int[] array) {
-        for (int i = 0; i < array.length; i++){
-            array[i] *= -1;
-        }
-        Arrays.sort(array);
-        for (int i = 0; i < array.length; i++){
-            array[i] *= -1;
-        }
+    public static void sort(Integer[] array) {
+
+        Arrays.sort(array, Collections.reverseOrder());
     }
 }
