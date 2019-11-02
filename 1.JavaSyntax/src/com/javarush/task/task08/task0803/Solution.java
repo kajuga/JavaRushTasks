@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class Solution {
     public static void main(String[] args) throws Exception {
-        String[] cats = new String[]{"васька", "мурка", "дымка", "рыжик", "серый", "снежок", "босс", "борис", "визя", "гарфи"};
+        String[] cats = {"васька", "мурка", "дымка", "рыжик", "серый", "снежок", "босс", "борис", "визя", "гарфи"};
         Map<String, Cat> map = addCatsToMap(cats);
         for (Map.Entry<String, Cat> pair : map.entrySet()) {
             System.out.println(pair.getKey() + " - " + pair.getValue());

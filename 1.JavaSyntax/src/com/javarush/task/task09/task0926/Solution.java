@@ -18,10 +18,17 @@ public class Solution {
     }
 
     public static void printList(ArrayList<int[]> list) {
-        for (int[] array : list) {
-            for (int x : array) {
-                System.out.println(x);
-            }
+//        for (int[] array : list) {
+//            for (int x : array) {
+//                System.out.println(x);
+//            }
+//        }
+
+    for (int[] xxx : list) {
+        for (int inner : xxx) {
+            System.out.println(inner);
         }
+    }
+
     }
 }

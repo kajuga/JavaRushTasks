@@ -37,7 +37,7 @@ public class Solution {
     }
 
     public static String method4() {
-        method5();
+        method6();
         //напишите тут ваш код
         StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
         String name = stackTraceElements[2].getMethodName();
@@ -47,9 +47,20 @@ public class Solution {
 
     public static String method5() {
         //напишите тут ваш код
+        method6();
         StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();
         String name = stackTraceElements[2].getMethodName();
         System.out.println(name);
         return name;
     }
+
+    public static int method6() {
+        StackTraceElement [] stackTraceElements = Thread.currentThread().getStackTrace();
+        int name = stackTraceElements[2].getLineNumber();
+        System.out.println(name);
+        return name;
+
+    }
+
+
 }

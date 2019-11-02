@@ -10,89 +10,36 @@ import java.util.*;
 
 public class Solution {
     public static void main(String[] args) throws Exception {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        ArrayList<String> list = new ArrayList<>();
-        while (true) {
-            String s = reader.readLine();
-            if (s.isEmpty()) {
-                break;
+        Set<String> stringList = new TreeSet<>();
+        List<Integer> integerList = new ArrayList<>();
+
+
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
+            while (reader != null) {
+                String temp = reader.readLine();
+                if (isNumber(temp) ? integerList.add(Integer.parseInt(temp)) : stringList.add(temp)) ;
             }
-            list.add(s);
+        }
+        for (String str : stringList) {
+            System.out.println(str);
         }
 
-        String[] array = list.toArray(new String[0]);
-        sort(array);
+        System.out.println(Collections.reverseOrder());
 
-        for (String x : array) {
-            System.out.println(x);
-        }
     }
 
-    public static void sort(String[] array) {
-        ArrayList<String> words = new ArrayList<>(); //создаём два списка: для чисел и слов
-        ArrayList<Integer> nums = new ArrayList<>();
-        for (String str : array) { //проходимся по всему массиву
-            if (isNumber(str)) //сортируем элементы по спискам
-                nums.add(Integer.parseInt(str));
-            else words.add(str);
-        }
-
-        for (int i = 0; i < words.size(); i++) {
-            for (int j = 0; j < words.size() - 1; j++) {
-                String var = words.get(j);
-                if (isGreaterThan(words.get(j), words.get(j + 1))) {
-                    words.set(j, words.get(j + 1));
-                    words.set(j + 1, var);
-                }
-            }
-        }
-        for (int i = 0; i < nums.size(); i++) {
-            for (int j = 0; j < nums.size() - 1; j++) {
-                int var = nums.get(j);
-                if (nums.get(j) < nums.get(j + 1)) {
-                    nums.set(j, nums.get(j + 1));
-                    nums.set(j + 1, var);
-                }
-            }
-        }
-        //ужос какой, но пускай так будет.
-        for (int i = 0; i < array.length; i++) {
-            if (isNumber(array[i])) {
-                array[i] = String.valueOf(nums.get(0));
-                nums.remove(0);
-            } else {
-                array[i] = words.get(0);
-                words.remove(0);
-            }
-        }
-    }
-
-    // Метод для сравнения строк: 'а' больше чем 'b'
-    public static boolean isGreaterThan(String a, String b) {
-        return a.compareTo(b) > 0;
-    }
-
-
-    // Переданная строка - это число?
-    public static boolean isNumber(String s) {
-        if (s.length() == 0) {
+    public static boolean isNumber(String str) {
+        if (str == null || str.isEmpty()) {
             return false;
         }
-
-        char[] chars = s.toCharArray();
-        for (int i = 0; i < chars.length; i++) {
-            char c = chars[i];
-            if ((i != 0 && c == '-') // Строка содержит '-'
-                    || (!Character.isDigit(c) && c != '-') // или не цифра и не начинается с '-'
-                    || (chars.length == 1 && c == '-')) // или одиночный '-'
-            {
+        for (int i = 0; i < str.length(); i++) {
+            if (!Character.isDigit(str.charAt(i))) {
                 return false;
             }
         }
         return true;
     }
 
-    //Компаратор для чисел - в обратном порядке
     Comparator<Integer> comparator = new Comparator<Integer>() {
 
         public int compare(Integer o1, Integer o2) {
@@ -104,5 +51,6 @@ public class Solution {
             }
             return 0;
         }
+
     };
 }

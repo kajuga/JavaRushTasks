@@ -5,14 +5,27 @@ package com.javarush.task.task11.task1101;
 */
 
 public class Solution {
-    public static void main(String[] args) {
+         public static void main(String[] args) {
+        }
+
+        public class Horse {
+
+        }
+
+        public class Pegas extends Horse {
+
+        }
     }
+/*
+Лошадь и Пегас
 
-    public class Horse {
+Отредактировать два класса: Horse (лошадь) и Pegas (пегас).
+Унаследовать пегаса от лошади.
 
-    }
-
-    public class Pegas extends Horse {
-
-    }
-}
+Требования:
+1. В классе Solution должен быть класс Horse (лошадь).
+2. Класс Horse должен быть public.
+3. В классе Solution должен быть класс Pegas (пегас).
+4. Класс Pegas должен быть public.
+5. Класс Pegas должен быть унаследован от класса Horse.
+*/

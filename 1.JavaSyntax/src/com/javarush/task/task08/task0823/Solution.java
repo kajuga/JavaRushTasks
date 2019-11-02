@@ -10,17 +10,13 @@ import java.io.InputStreamReader;
 
 public class Solution {
     public static void main(String[] args) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String[] strings = (reader.readLine()).split("\\s");
-        for (int i = 0; i < strings.length; i++) {
-            String uppka = strings[i].substring(0, 1).toUpperCase();
-            strings[i] = uppka + strings[i].substring(1);
+        String text = "мама мыла раму";
+        String [] arr = text.split(" ");
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = arr[i].substring(0,1).toUpperCase() + arr[i].substring(1);
+            System.out.print (arr[i] + " ");
         }
-
-        for (int i = 0; i < strings.length; i++) {
-            System.out.print(strings[i] + " ");
-        }
-
         //напишите тут ваш код
+        //можно стрингбилдером, но хренсним, пока пусть так захордкожено будет
     }
 }

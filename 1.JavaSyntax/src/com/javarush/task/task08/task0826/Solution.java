@@ -5,6 +5,8 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
+import java.util.Random;
 
 /* 
 Пять победителей
@@ -12,24 +14,27 @@ import java.util.Collections;
 
 public class Solution {
         public static void main(String[] args) throws Exception {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             Integer[] array = new Integer[20];
             for (int i = 0; i < array.length; i++) {
-                array[i] = Integer.parseInt(reader.readLine());
+                array[i] = (int) (Math.random() * 10);
+                System.out.print(array[i] + " ");
+            }
+            System.out.println();
+
+            Arrays.sort(array, Collections.reverseOrder());
+            int counter = 0;
+
+            while (counter <= 5) {
+                for (int i = 0; i < array.length; i++) {
+                if (array[i] != array[i + 1]) {
+                    System.out.println(array[i]);
+                    counter++;
+                }
+
+                }
+
             }
 
-            sort(array);
-
-            System.out.println(array[0]);
-            System.out.println(array[1]);
-            System.out.println(array[2]);
-            System.out.println(array[3]);
-            System.out.println(array[4]);
-        }
-
-        public static void sort(Integer[] array) {
-            //напишите тут ваш код
-            Arrays.sort(array, Collections.reverseOrder());
+            }
 
         }
-    }
