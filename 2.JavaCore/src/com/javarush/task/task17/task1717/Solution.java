@@ -4,8 +4,6 @@ package com.javarush.task.task17.task1717;
 Лишняя синхронизация
 */
 
-import java.util.Comparator;
-
 public class Solution {
     char[] value;
     int count;
