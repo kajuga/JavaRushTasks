@@ -1,0 +1,5 @@
+Description
+The java.io.FileInputStream.available() method returns number of remaining bytes that can be read from
+this input stream without blocking by the next method call for this input stream. The next method call can also be the another thread.
+Declaration
+Following is the declaration for java.io.FileInputStream.available() method −
