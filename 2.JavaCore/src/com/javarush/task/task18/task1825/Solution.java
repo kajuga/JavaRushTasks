@@ -13,33 +13,28 @@ import java.util.*;
 /home/kajuga/projects/JavaRushTasks/2.JavaCore/src/com/javarush/task/task18/task1825/Lion.avi.part4
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws IOException
-    {
-        BufferedReader    reader = new BufferedReader (new InputStreamReader (System.in));
-        String            name;
-        ArrayList<String> list   = new ArrayList<> ( );
-        while (!(name = reader.readLine ( )).contains ("end"))
-        {
-            list.add (name);
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        List<String> partNameList = new ArrayList<>();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String line;
+        while (!(line = reader.readLine()).contains("end")) {
+            partNameList.add(line);
         }
-        Collections.sort (list);
-        String nameNewFile = list.get (0);
-        int pos=nameNewFile.lastIndexOf (".");
-        nameNewFile = nameNewFile.substring (0, pos);
-        FileOutputStream outputStream = new FileOutputStream (nameNewFile);
-        byte[] buffer=new byte[1024];
-        for (String nameFilePart : list)
-        {
-            FileInputStream inputStream = new FileInputStream (nameFilePart);
-            while (inputStream.available ( ) > 0)
-            {   int    count  = inputStream.read (buffer);
-                outputStream.write (buffer, 0, count);
+        reader.close();
+        Collections.sort(partNameList);
+        String filename = partNameList.get(0).substring(0, partNameList.get(0).lastIndexOf('.'));
+        FileOutputStream fileOutputStream = new FileOutputStream(filename);
+        byte[] buffer = new byte[1024];
+        for (String part : partNameList) {
+            FileInputStream fileInputStream = new FileInputStream(part);
+            while (fileInputStream.available() > 0) {
+                int count = fileInputStream.read(buffer);
+                fileOutputStream.write(buffer, 0, count);
             }
-            inputStream.close ( );
+            fileInputStream.close();
         }
-        outputStream.close ();
-        reader.close ( );
+        reader.close();
+        fileOutputStream.close();
     }
 }
