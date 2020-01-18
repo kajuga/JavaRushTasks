@@ -31,14 +31,14 @@ public class Solution implements Serializable {
         }
 
         private void writeObject(ObjectOutputStream out) throws IOException {
-            out.defaultWriteObject();
             out.writeObject(nameA);
+            out.defaultWriteObject();
 //            out.writeObject(nameB);
         }
 
         private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
-            ois.defaultReadObject();
             this.nameA= String.valueOf(ois.readObject());
+            ois.defaultReadObject();
 //            this.nameB = String.valueOf(ois.readObject());
         }
     }
