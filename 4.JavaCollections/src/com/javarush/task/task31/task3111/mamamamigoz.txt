@@ -1,0 +1,7 @@
+
+
+
+4. Если в SearchFileVisitor задан критерий поиска partOfContent, метод visitFile должен добавить файл в foundFiles, если в содержимом встречается строка partOfContent.
+5. Если в SearchFileVisitor задан критерий поиска maxSize, метод visitFile должен добавить файл в foundFiles, если размер файла меньше maxSize.
+6. Если в SearchFileVisitor задан критерий  programmer поиска minSize, метод visitFile должен добавить файл в foundFiles, если размер файла больше minSize.
+7. Метод visitFile должен быть реализован так, чтобы учитывать сразу несколько критериев поиска.
