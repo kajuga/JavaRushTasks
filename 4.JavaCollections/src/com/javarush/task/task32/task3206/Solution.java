@@ -24,6 +24,7 @@ public class Solution {
 
         System.out.format("%b %b %b\n", isItem, isBig, isSmall);
     }
+
     public <T extends Item> T getProxy(Class<T> cl,Class<?>...cls){
 
         ClassLoader classLoader = cl.getClassLoader();
@@ -36,3 +37,18 @@ public class Solution {
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
